@@ -38,32 +38,50 @@ books = [
 //for each item in the array update/change/transform that item without mutating original array
 //make a new array to hold the updated/changed/transformed items
 
-function loopAndUpdate(array,updaterFoo){
-    const updatedArray=[];
+// function loopAndUpdate(array,updaterFoo){
+//     const updatedArray=[];
 
-    for(let item of array){
+//     for(let item of array){
  
-        updatedArray.push(updaterFoo(item))
-    }
-    return updatedArray
-}
+//         updatedArray.push(updaterFoo(item))
+//     }
+//     return updatedArray
+// }
+
+
+const title=books.map((item)=>item.title)
+
+
+
+
 //Return an array of titles
-function titles(item){
-    return item.title
-}
+// function titles(item){
+//     return item.title
+// }
 //return an array of prices
-function prices(item){
+function pricesFoo(item){
+    console.log('Inside of pricesFoo',item)
     return item.price
 }
+
+// const prices=books.map(pricesFoo)
+
+
 //return an array of inventory
-function inventory(item){
-    return item.inventory
-}
+// function inventory(item){
+//     return item.inventory
+// }
+
+const inventory=books.map((item)=>item.inventory
+)
+// console.log(inventory)
 //return an array of books, 50% iff
-function halfOff(item){
+function halfOffoo(item){
     let itemCopy=Object.assign({},item)
     itemCopy.price=Math.floor(itemCopy.price/2)
     return itemCopy
 }
-console.log(loopAndUpdate(books,halfOff))
-console.log(loopAndUpdate(books,prices))
+const halfOff=books.map(halfOffoo)
+console.log(halfOff)
+// console.log(loopAndUpdate(books,halfOff))
+// console.log(loopAndUpdate(books,prices))
