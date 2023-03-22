@@ -12,12 +12,12 @@ let books = [
   {
     title: "JavaScript: The good Parts",
     price: 10.0,
-    inventory: 4,
+    inventory: 1,
   },
   {
     title: "Eloquent JavaScript: A modern Introduction to Programming",
     price: 10.0,
-    inventory: 15,
+    inventory: 1,
   },
   {
     title: "JavaScript: The definitive guide",
@@ -26,15 +26,18 @@ let books = [
   },
   {
     title: "You dont know JS",
-    price: 6.25,
-    inventory: 7,
+    price: 2,
+    inventory: 5,
   },
 ];
 
 const reducer = (accumulator, item) => {
+//     console.log(accumulator, item)
+// return accumulator+", "+item.title
+    
   console.log(accumulator, item);
   let total = item.price * item.inventory;
   return accumulator += total;
 };
 
-let total = books.reduce(reducer, 0);
+let total = books.reduce(reducer, 0)
